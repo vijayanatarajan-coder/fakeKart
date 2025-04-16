@@ -2,12 +2,14 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div
+    <section
       className="loader"
-      role="progressbar"
+      role="status"
       aria-live="polite"
-      aria-label="Loading..."
-    ></div>
+      aria-label="Loading"
+    >
+      <span className="visually-hidden">Loading...</span>
+    </section>
   );
 };
 

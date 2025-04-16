@@ -28,40 +28,45 @@ const Dashboard = () => {
 
       <main className="col-12 col-md-10">
         <header>
-          <h1 className="my-4">Dashboard</h1>
+          <h1 className="my-4" tabindex="1">
+            Dashboard
+          </h1>
         </header>
 
         <section className="row pr-4">
-          <article className="col-xl-3 col-sm-6 mb-3">
-            <div className="card text-white bg-success o-hidden h-100">
-              <div className="card-body">
-                <div className="text-center card-font-size">
-                  <h2 className="h5">Products</h2>
-                  <b>{products.length}</b>
-                </div>
-              </div>
-              <Link
-                className="card-footer text-white clearfix small z-1"
-                to="/admin/products"
-                aria-label="View all products"
+          <article className="col-xl-3 col-sm-6 mb-3" tabindex="2">
+            <article className="card text-white bg-success o-hidden h-100">
+              <div
+                className="card-body text-center card-font-size"
+                tabindex="3"
               >
-                <span className="float-left">View Details</span>
-                <span className="float-right">
+                <h2 className="h5">Products</h2>
+                <strong>{products.length}</strong>
+              </div>
+              <footer className="card-footer text-white clearfix small z-1">
+                <Link
+                  to="/admin/products"
+                  aria-label="View all products"
+                  className="text-white d-flex justify-content-between align-items-center"
+                  tabindex="4"
+                >
+                  <span>View Details</span>
                   <i className="fa fa-angle-right" aria-hidden="true"></i>
-                </span>
-              </Link>
-            </div>
+                </Link>
+              </footer>
+            </article>
           </article>
 
-          <article className="col-xl-3 col-sm-6 mb-3">
-            <div className="card text-white bg-warning o-hidden h-100">
-              <div className="card-body">
-                <div className="text-center card-font-size">
-                  <h2 className="h5">Out of Stock</h2>
-                  <b>{outOfStock}</b>
-                </div>
+          <article className="col-xl-3 col-sm-6 mb-3" tabindex="5">
+            <article className="card text-white bg-warning o-hidden h-100">
+              <div
+                className="card-body text-center card-font-size"
+                tabindex="6"
+              >
+                <h2 className="h5">Out of Stock</h2>
+                <strong>{outOfStock}</strong>
               </div>
-            </div>
+            </article>
           </article>
         </section>
       </main>

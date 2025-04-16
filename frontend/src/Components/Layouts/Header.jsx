@@ -77,35 +77,15 @@ const Header = () => {
 
   return (
     <nav className="navbar row" role="navigation" aria-label="Main Navigation">
-      <div className="col-12 col-md-3">
-        <div className="navbar-brand">
-          <Link to="/" aria-label="Go to home page">
+      <section className="col-12 col-md-3">
+        <h1 className="navbar-brand mb-0">
+          <Link to="/" aria-label="Go to home page" tabIndex="0">
             <img width="150px" src="/Images/logo.png" alt="FakeKart Logo" />
           </Link>
-        </div>
-      </div>
+        </h1>
+      </section>
 
-      {/* <div className="col-12 col-md-6 mt-2 mt-md-0">
-        <div className="input-group">
-          <label htmlFor="search_field" className="visually-hidden">
-            Search for products
-          </label>
-          <input
-            type="text"
-            id="search_field"
-            className="form-control"
-            placeholder="Enter Product Name ..."
-            aria-label="Search products"
-          />
-          <div className="input-group-append">
-            <button id="search_btn" className="btn" aria-label="Search">
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-      </div> */}
-
-      <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+      <section className="col-12 col-md-3 mt-4 mt-md-0 text-center">
         {user ? (
           <>
             <img
@@ -113,22 +93,24 @@ const Header = () => {
               alt={`Profile of ${user.name}`}
               width="40"
               style={{ borderRadius: "50%" }}
+              tabIndex="0"
             />
-            <span id="cart">{user.name}</span>
-
+            <span id="cart" tabIndex="0">
+              {user.name}
+            </span>{" "}
             {role === "Admin" && (
-              <button className="btn dashboard-btn" id="login_btn">
+              <button className="btn dashboard-btn" id="login_btn" tabIndex="0">
                 <Link to="/Admin/Dashboard" aria-label="Go to admin dashboard">
                   Dashboard
                 </Link>
               </button>
             )}
-
             <button
               className="btn"
               id="login_btn"
               onClick={logout}
               aria-label="Logout"
+              tabIndex="0"
             >
               Logout
             </button>
@@ -139,11 +121,12 @@ const Header = () => {
             id="login_btn"
             onClick={login}
             aria-label="Login"
+            tabIndex="0"
           >
             Login
           </button>
         )}
-      </div>
+      </section>
     </nav>
   );
 };

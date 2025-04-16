@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-//import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAdminProducts } from "../../Actions/ProductsActions";
@@ -53,7 +52,7 @@ export default function ProductList() {
       rows: [],
     };
 
-    products.forEach((product) => {
+    products.forEach((product, index) => {
       data.rows.push({
         id: product._id,
         name: product.name,
@@ -66,6 +65,7 @@ export default function ProductList() {
               className="btn btn-primary"
               aria-label="Edit product"
               title="Edit"
+              tabindex={index * 3 + 1} // Sequential tabindex for editing
             >
               <i className="fa fa-pencil" aria-hidden="true"></i>
             </Link>
@@ -76,6 +76,7 @@ export default function ProductList() {
               className="btn btn-danger py-1 px-2 ml-2"
               aria-label="Delete product"
               title="Delete"
+              tabindex={index * 3 + 2} // Sequential tabindex for deleting
             >
               <i className="fa fa-trash" aria-hidden="true"></i>
             </button>
@@ -104,7 +105,7 @@ export default function ProductList() {
       return;
     }
     if (isProductDeleted) {
-      toast("Product Deleted Succesfully!", {
+      toast("Product Deleted Successfully!", {
         type: "success",
         position: "bottom-center",
         onOpen: () => dispatch(clearProductDeleted()),
@@ -123,7 +124,9 @@ export default function ProductList() {
 
       <main className="col-12 col-md-10">
         <header>
-          <h1 className="my-4">Product List</h1>
+          <h1 className="my-4" tabindex="1">
+            Product List
+          </h1>
         </header>
 
         <section
@@ -140,6 +143,7 @@ export default function ProductList() {
               striped
               hover
               responsive
+              tabindex="2" // Set tabindex for the table
             />
           )}
         </section>

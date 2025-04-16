@@ -88,6 +88,7 @@ nav {
 
 .card-body {
   padding-left: 0;
+  /* background-color: #232f3e; */
 }
 
 .card-text {
@@ -385,6 +386,10 @@ ul.CTAs a {
 .card-font-size {
   font-size: 1.5rem;
 }
+/* .card-footer {
+  background-color: #232f3e;
+  border-top: 1px solid rgb(255 255 255);
+} */
 
 /* Reviews */
 

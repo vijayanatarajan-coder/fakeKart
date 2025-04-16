@@ -9,7 +9,7 @@ export default function Sidebar() {
       <nav id="sidebar">
         <ul className="list-unstyled components">
           <li>
-            <Link to="/admin/dashboard">
+            <Link to="/admin/dashboard" tabindex="1">
               <i className="fas fa-tachometer-alt" aria-hidden="true"></i>
               <span className="ml-2">Dashboard</span>
             </Link>
@@ -24,14 +24,19 @@ export default function Sidebar() {
                 </>
               }
               id="product-menu"
+              tabindex="2" // tabindex for the dropdown itself
             >
-              <NavDropdown.Item onClick={() => navigate("/admin/products")}>
+              <NavDropdown.Item
+                onClick={() => navigate("/admin/products")}
+                tabindex="3" // tabindex for the 'All' products item
+              >
                 <i className="fa fa-shopping-basket" aria-hidden="true"></i>
                 <span className="ml-2">All</span>
               </NavDropdown.Item>
 
               <NavDropdown.Item
                 onClick={() => navigate("/admin/products/create")}
+                tabindex="4" // tabindex for the 'Create' product item
               >
                 <i className="fa fa-plus" aria-hidden="true"></i>
                 <span className="ml-2">Create</span>

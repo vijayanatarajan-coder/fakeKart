@@ -80,7 +80,7 @@ export default function UpdateProduct() {
 
   useEffect(() => {
     if (isProductUpdated) {
-      toast("Product Updated Succesfully!", {
+      toast("Product Updated Successfully!", {
         type: "success",
         position: "bottom-center",
         onOpen: () => dispatch(clearProductupdated()),
@@ -122,22 +122,23 @@ export default function UpdateProduct() {
 
   return (
     <section className="row">
-      <aside className="col-12 col-md-2">
+      <aside className="col-12 col-md-2" aria-label="Sidebar">
         <Sidebar />
       </aside>
 
       <main className="col-12 col-md-10">
-        <div className="wrapper my-5">
+        <section className="wrapper my-5">
           <form
             onSubmit={submitHandler}
             className="shadow-lg"
             encType="multipart/form-data"
+            aria-label="Update Product Form"
           >
             <header>
               <h1 className="mb-4">Update Product</h1>
             </header>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="name_field">Name</label>
               <input
                 type="text"
@@ -145,10 +146,11 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                tabIndex="1"
               />
-            </div>
+            </section>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="price_field">Price</label>
               <input
                 type="text"
@@ -156,10 +158,11 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+                tabIndex="2"
               />
-            </div>
+            </section>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="description_field">Description</label>
               <textarea
                 className="form-control"
@@ -167,16 +170,18 @@ export default function UpdateProduct() {
                 rows="8"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
+                tabIndex="3"
               ></textarea>
-            </div>
+            </section>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="category_field">Category</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="form-control"
                 id="category_field"
+                tabIndex="4"
               >
                 <option value="">Select</option>
                 {categories.map((category) => (
@@ -185,9 +190,9 @@ export default function UpdateProduct() {
                   </option>
                 ))}
               </select>
-            </div>
+            </section>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="stock_field">Stock</label>
               <input
                 type="number"
@@ -195,10 +200,11 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setStock(e.target.value)}
                 value={stock}
+                tabIndex="5"
               />
-            </div>
+            </section>
 
-            <div className="form-group">
+            <section className="form-group">
               <label htmlFor="seller_field">Seller Name</label>
               <input
                 type="text"
@@ -206,12 +212,14 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setSeller(e.target.value)}
                 value={seller}
+                tabIndex="6"
               />
-            </div>
+            </section>
 
             <fieldset className="form-group">
               <legend>Images</legend>
-              <div className="custom-file">
+
+              <section className="custom-file">
                 <input
                   type="file"
                   name="product_images"
@@ -220,11 +228,12 @@ export default function UpdateProduct() {
                   multiple
                   onChange={onImagesChange}
                   aria-describedby="imageUploadHelp"
+                  tabIndex="7"
                 />
                 <label className="custom-file-label" htmlFor="customFile">
                   Choose Images
                 </label>
-              </div>
+              </section>
 
               {imagesPreview.length > 0 && (
                 <span
@@ -232,12 +241,13 @@ export default function UpdateProduct() {
                   onClick={clearImagesHandler}
                   style={{ cursor: "pointer" }}
                   title="Clear all selected images"
+                  tabIndex="8"
                 >
                   <i className="fa fa-trash" aria-hidden="true"></i>
                 </span>
               )}
 
-              <div className="image-preview mt-3">
+              <section className="image-preview mt-3 d-flex flex-wrap">
                 {imagesPreview.map((image) => (
                   <img
                     className="mr-2"
@@ -248,19 +258,22 @@ export default function UpdateProduct() {
                     height="52"
                   />
                 ))}
-              </div>
+              </section>
             </fieldset>
 
-            <button
-              id="login_button"
-              type="submit"
-              disabled={loading}
-              className="btn btn-block py-3"
-            >
-              {loading ? "Updating..." : "UPDATE"}
-            </button>
+            <footer>
+              <button
+                id="login_button"
+                type="submit"
+                disabled={loading}
+                className="btn btn-block py-3"
+                tabIndex="9"
+              >
+                {loading ? "Updating..." : "UPDATE"}
+              </button>
+            </footer>
           </form>
-        </div>
+        </section>
       </main>
     </section>
   );
