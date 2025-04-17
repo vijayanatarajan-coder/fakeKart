@@ -1,34 +1,77 @@
 FakeKart
-an little things in the E-commerce Website built with MERN stack.
+This is a full-stack eCommerce application where users can browse and view products, while administrators can manage (add, edit, delete) products through an authenticated dashboard. The frontend interacts with a backend API to fetch and manipulate product data stored in MongoDB. The application supports role-based access control and tracks user interaction via Google Analytics.
 
-Instructions
-after cloning, run this command in the root folder
-
+How to Run
+1. Clone the repository
+bash
+Copy
+Edit
+git clone <your-repo-url>
+cd your-project-folder
+2. Install dependencies (root folder)
+bash
+Copy
+Edit
 npm install
-navigate to "frontend" folder, run these commands
-wait for application build after that open the frontend/.env 
+3. Setup and run frontend
+bash
+Copy
+Edit
+cd frontend
 npm install
 npm run dev
-wait for application build after that open the backend/config/config.env and update the MongoDB connection string
+Wait for the frontend to build. Make sure .env file is properly configured.
 
-...This is for the "backend" folder
+4. Configure backend
+Edit the backend/config/config.env file:
+
+env
+Copy
+Edit
 DB_LOCAL_URI=mongodb://localhost:27017/ecommerce
-navigate back to "root" folder and run this command for loading demo data
-
+5. Seed the database
+bash
+Copy
+Edit
+cd ..  # back to root folder
 npm run seeder
-run this below command to run the app in development mode
-
+6. Run the backend in development mode
+bash
+Copy
+Edit
 npm run dev
-Test
-open the http://localhost:8000 and test the
-
-Summary of application
-
-How to run
+7. Open the app
+Visit: http://localhost:8000
 
 A11y and SEO
+Semantic HTML elements used throughout (e.g., <article>, <section>, <nav>)
+
+Used ARIA labels, tabIndex, and proper heading structure
+
+Tested for accessibility and SEO using Lighthouse in Chrome DevTools
 
 Tracking
+Integrated Google Analytics (GA4) via script tag in index.html
+
+Tracked specific events like "View Details" button clicks using gtag("event", ...)
+
+Helpful for monitoring user interaction and engagement
 
 Security
+OAuth 2.0 used for authentication
 
+Role-based access control: users and admins have different privileges
+
+Users: View products
+
+Admins: Add, edit, delete products
+
+User details stored in MongoDB upon login
+
+Admin access determined by checking email from a pre-seeded list in the database
+
+Token storage:
+
+Currently stored in sessionStorage (potentially vulnerable)
+
+Future plan: Store tokens in HTTP-only cookies with expiration for improved security
