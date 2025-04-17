@@ -51,7 +51,7 @@ How to Run ------------------
 
 A11y and SEO ----------------
 
-Semantic HTML elements used throughout (e.g., <article>, <section>, <nav>)
+Semantic HTML elements used throughout
 
 Used ARIA labels, tabIndex, and proper heading structure
 
