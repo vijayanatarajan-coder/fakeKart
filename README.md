@@ -77,7 +77,8 @@ Admins: Add, edit, delete products
 
 User details stored in MongoDB upon login
 
-Admin access determined by checking email from a pre-seeded list in the database
+Admin access determined by checking email from database by adding email eg.(
+email :"example.com")
 
 Token storage-------------
 
