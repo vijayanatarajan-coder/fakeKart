@@ -65,7 +65,7 @@ export default function ProductList() {
               className="btn btn-primary"
               aria-label="Edit product"
               title="Edit"
-              tabindex={index * 3 + 1} // Sequential tabindex for editing
+              tabindex={index * 3 + 1}
             >
               <i className="fa fa-pencil" aria-hidden="true"></i>
             </Link>
@@ -76,7 +76,7 @@ export default function ProductList() {
               className="btn btn-danger py-1 px-2 ml-2"
               aria-label="Delete product"
               title="Delete"
-              tabindex={index * 3 + 2} // Sequential tabindex for deleting
+              tabindex={index * 3 + 2}
             >
               <i className="fa fa-trash" aria-hidden="true"></i>
             </button>
@@ -143,7 +143,7 @@ export default function ProductList() {
               striped
               hover
               responsive
-              tabindex="2" // Set tabindex for the table
+              tabindex="2"
             />
           )}
         </section>

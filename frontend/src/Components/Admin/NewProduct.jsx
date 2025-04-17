@@ -106,7 +106,7 @@ export default function NewProduct() {
             aria-label="Create New Product Form"
           >
             <header>
-              <h1 className="mb-4" tabindex="1">
+              <h1 className="mb-4" tabIndex={0}>
                 New Product
               </h1>
             </header>
@@ -115,7 +115,7 @@ export default function NewProduct() {
               <legend className="sr-only">Product Information</legend>
 
               <section className="form-group">
-                <label htmlFor="name_field" tabindex="2">
+                <label htmlFor="name_field" tabIndex={0}>
                   Name
                 </label>
                 <input
@@ -125,12 +125,12 @@ export default function NewProduct() {
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                   required
-                  tabindex="3"
+                  tabIndex={0}
                 />
               </section>
 
               <section className="form-group">
-                <label htmlFor="price_field" tabindex="4">
+                <label htmlFor="price_field" tabIndex={0}>
                   Price
                 </label>
                 <input
@@ -140,12 +140,12 @@ export default function NewProduct() {
                   onChange={(e) => setPrice(e.target.value)}
                   value={price}
                   required
-                  tabindex="5"
+                  tabIndex={0}
                 />
               </section>
 
               <section className="form-group">
-                <label htmlFor="description_field" tabindex="6">
+                <label htmlFor="description_field" tabIndex={0}>
                   Description
                 </label>
                 <textarea
@@ -155,12 +155,12 @@ export default function NewProduct() {
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
                   required
-                  tabindex="7"
+                  tabIndex={0}
                 ></textarea>
               </section>
 
               <section className="form-group">
-                <label htmlFor="category_field" tabindex="8">
+                <label htmlFor="category_field" tabIndex={0}>
                   Category
                 </label>
                 <select
@@ -168,7 +168,7 @@ export default function NewProduct() {
                   className="form-control"
                   id="category_field"
                   required
-                  tabindex="9"
+                  tabIndex={0}
                 >
                   <option value="">Select</option>
                   {categories.map((category) => (
@@ -180,7 +180,7 @@ export default function NewProduct() {
               </section>
 
               <section className="form-group">
-                <label htmlFor="stock_field" tabindex="10">
+                <label htmlFor="stock_field" tabIndex={0}>
                   Stock
                 </label>
                 <input
@@ -190,12 +190,12 @@ export default function NewProduct() {
                   onChange={(e) => setStock(e.target.value)}
                   value={stock}
                   required
-                  tabindex="11"
+                  tabIndex={0}
                 />
               </section>
 
               <section className="form-group">
-                <label htmlFor="seller_field" tabindex="12">
+                <label htmlFor="seller_field" tabIndex={0}>
                   Seller Name
                 </label>
                 <input
@@ -205,12 +205,12 @@ export default function NewProduct() {
                   onChange={(e) => setSeller(e.target.value)}
                   value={seller}
                   required
-                  tabindex="13"
+                  tabIndex={0}
                 />
               </section>
 
               <section className="form-group">
-                <label htmlFor="customFile" tabindex="14">
+                <label htmlFor="customFile" tabIndex={0}>
                   Images
                 </label>
                 <section className="custom-file">
@@ -222,12 +222,12 @@ export default function NewProduct() {
                     multiple
                     onChange={onImagesChange}
                     aria-describedby="imageUploadHelp"
-                    tabindex="15"
+                    tabIndex={0}
                   />
                   <label
                     className="custom-file-label"
                     htmlFor="customFile"
-                    tabindex="16"
+                    tabIndex={0}
                   >
                     Choose Images
                   </label>
@@ -235,7 +235,7 @@ export default function NewProduct() {
 
                 <section
                   className="preview-images mt-3 d-flex flex-wrap"
-                  tabindex="17"
+                  tabIndex={0}
                 >
                   {imagesPreview.map((image) => (
                     <img

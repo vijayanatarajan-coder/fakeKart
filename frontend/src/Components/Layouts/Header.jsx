@@ -79,7 +79,7 @@ const Header = () => {
     <nav className="navbar row" role="navigation" aria-label="Main Navigation">
       <section className="col-12 col-md-3">
         <h1 className="navbar-brand mb-0">
-          <Link to="/" aria-label="Go to home page" tabIndex="0">
+          <Link to="/" aria-label="Go to home page" tabIndex={0}>
             <img width="150px" src="/Images/logo.png" alt="FakeKart Logo" />
           </Link>
         </h1>
@@ -93,13 +93,13 @@ const Header = () => {
               alt={`Profile of ${user.name}`}
               width="40"
               style={{ borderRadius: "50%" }}
-              tabIndex="0"
+              tabIndex={0}
             />
-            <span id="cart" tabIndex="0">
+            <span id="cart" tabIndex={0}>
               {user.name}
             </span>{" "}
             {role === "Admin" && (
-              <button className="btn dashboard-btn" id="login_btn" tabIndex="0">
+              <button className="btn dashboard-btn" id="login_btn" tabIndex={0}>
                 <Link to="/Admin/Dashboard" aria-label="Go to admin dashboard">
                   Dashboard
                 </Link>
@@ -110,7 +110,7 @@ const Header = () => {
               id="login_btn"
               onClick={logout}
               aria-label="Logout"
-              tabIndex="0"
+              tabIndex={0}
             >
               Logout
             </button>
@@ -121,7 +121,7 @@ const Header = () => {
             id="login_btn"
             onClick={login}
             aria-label="Login"
-            tabIndex="0"
+            tabIndex={0}
           >
             Login
           </button>

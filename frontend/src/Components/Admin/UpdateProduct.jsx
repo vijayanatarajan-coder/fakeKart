@@ -135,7 +135,9 @@ export default function UpdateProduct() {
             aria-label="Update Product Form"
           >
             <header>
-              <h1 className="mb-4">Update Product</h1>
+              <h1 className="mb-4" tabIndex={0}>
+                Update Product
+              </h1>
             </header>
 
             <section className="form-group">
@@ -146,7 +148,7 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                tabIndex="1"
+                tabIndex={1}
               />
             </section>
 
@@ -158,7 +160,7 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
-                tabIndex="2"
+                tabIndex={2}
               />
             </section>
 
@@ -170,7 +172,7 @@ export default function UpdateProduct() {
                 rows="8"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
-                tabIndex="3"
+                tabIndex={3}
               ></textarea>
             </section>
 
@@ -181,7 +183,7 @@ export default function UpdateProduct() {
                 onChange={(e) => setCategory(e.target.value)}
                 className="form-control"
                 id="category_field"
-                tabIndex="4"
+                tabIndex={4}
               >
                 <option value="">Select</option>
                 {categories.map((category) => (
@@ -200,7 +202,7 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setStock(e.target.value)}
                 value={stock}
-                tabIndex="5"
+                tabIndex={5}
               />
             </section>
 
@@ -212,7 +214,7 @@ export default function UpdateProduct() {
                 className="form-control"
                 onChange={(e) => setSeller(e.target.value)}
                 value={seller}
-                tabIndex="6"
+                tabIndex={6}
               />
             </section>
 
@@ -228,7 +230,7 @@ export default function UpdateProduct() {
                   multiple
                   onChange={onImagesChange}
                   aria-describedby="imageUploadHelp"
-                  tabIndex="7"
+                  tabIndex={7}
                 />
                 <label className="custom-file-label" htmlFor="customFile">
                   Choose Images
@@ -241,7 +243,7 @@ export default function UpdateProduct() {
                   onClick={clearImagesHandler}
                   style={{ cursor: "pointer" }}
                   title="Clear all selected images"
-                  tabIndex="8"
+                  tabIndex={8}
                 >
                   <i className="fa fa-trash" aria-hidden="true"></i>
                 </span>
@@ -267,7 +269,7 @@ export default function UpdateProduct() {
                 type="submit"
                 disabled={loading}
                 className="btn btn-block py-3"
-                tabIndex="9"
+                tabIndex={9}
               >
                 {loading ? "Updating..." : "UPDATE"}
               </button>
