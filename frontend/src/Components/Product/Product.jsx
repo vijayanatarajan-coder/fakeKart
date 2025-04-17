@@ -1,7 +1,22 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
+  const [count, setCount] = useState(0);
+
+  const handleViewDetailsClick = () => {
+    const newCount = count + 1;
+    if (window.gtag) {
+      window.gtag("event", "view_product_details", {
+        event_category: "product_interaction",
+        event_label: product.name,
+        product_id: product._id,
+      });
+    }
+    setCount(newCount);
+  };
+
   return (
     <article
       className="col-sm-12 col-md-6 col-lg-3 my-3"
@@ -22,6 +37,7 @@ const Product = ({ product }) => {
             <Link
               to={`/product/${product._id}`}
               aria-label={`View details of ${product.name}`}
+              onClick={handleViewDetailsClick}
             >
               {product.name}
             </Link>
@@ -55,6 +71,7 @@ const Product = ({ product }) => {
               id="view_btn"
               className="btn btn-block"
               aria-label={`View more details about ${product.name}`}
+              onClick={handleViewDetailsClick}
             >
               View Details
             </Link>
