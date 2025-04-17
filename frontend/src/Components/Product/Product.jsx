@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
@@ -22,7 +21,7 @@ const Product = ({ product }) => {
       className="col-sm-12 col-md-6 col-lg-3 my-3"
       aria-label={`Product card for ${product.name}`}
     >
-      <section className="card p-3 rounded" role="group">
+      <section className="card p-3 rounded">
         <header>
           <figure className="card-img-container mx-auto">
             <img
@@ -56,9 +55,7 @@ const Product = ({ product }) => {
                 aria-hidden="true"
               ></div>
             </div>
-            <span id="no_of_reviews" aria-live="polite">
-              ({product.numberOfReviews} Reviews)
-            </span>
+            <span aria-live="polite">({product.numberOfReviews} Reviews)</span>
           </div>
 
           <p className="card-text" aria-label={`Price: $${product.price}`}>
@@ -72,6 +69,7 @@ const Product = ({ product }) => {
               className="btn btn-block"
               aria-label={`View more details about ${product.name}`}
               onClick={handleViewDetailsClick}
+              data-testid="view-details-button"
             >
               View Details
             </Link>

@@ -36,8 +36,7 @@ const ProductDetail = () => {
             className="product-detail"
             aria-label={`Details about ${product.name}`}
           >
-            <div className="row f-flex justify-content-around">
-              {/* Product Image */}
+            <section className="row f-flex justify-content-around">
               <figure className="col-12 col-lg-5 img-fluid" id="product_image">
                 <img
                   src={product.images[0].image}
@@ -49,7 +48,6 @@ const ProductDetail = () => {
                 <figcaption className="sr-only">{product.name}</figcaption>
               </figure>
 
-              {/* Product Info */}
               <section
                 className="col-12 col-lg-5 mt-5"
                 aria-labelledby="product_title"
@@ -75,13 +73,15 @@ const ProductDetail = () => {
                   </span>
                 </section>
 
-                <section aria-label="Product pricing and stock status">
+                <section
+                  aria-label="Product pricing and stock status"
+                  tabIndex="0"
+                >
                   <p id="product_price" aria-label={`Price: $${product.price}`}>
                     ${product.price}
                   </p>
 
                   <p>
-                    Status:{" "}
                     <span
                       className={product.stock > 0 ? "greenColor" : "redColor"}
                       id="stock_status"
@@ -94,6 +94,7 @@ const ProductDetail = () => {
                 <section
                   className="product-description"
                   aria-labelledby="product_description_heading"
+                  tabIndex="0"
                 >
                   <h2 className="mt-2 h4" id="product_description_heading">
                     Description
@@ -118,70 +119,6 @@ const ProductDetail = () => {
                   </button>
                 </footer>
               </section>
-            </div>
-
-            {/* Review Modal */}
-            <section
-              className="modal-container row mt-2 mb-5"
-              role="dialog"
-              aria-labelledby="ratingModalLabel"
-              aria-modal="true"
-            >
-              <div className="rating w-50">
-                <div
-                  className="modal fade"
-                  id="ratingModal"
-                  tabIndex="-1"
-                  aria-labelledby="ratingModalLabel"
-                  aria-hidden="true"
-                >
-                  <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                      <header className="modal-header">
-                        <h2 className="modal-title h5" id="ratingModalLabel">
-                          Submit Review
-                        </h2>
-                        <button
-                          type="button"
-                          className="close"
-                          data-dismiss="modal"
-                          aria-label="Close review modal"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </header>
-                      <div className="modal-body">
-                        <ul className="stars" aria-label="Select your rating">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <li className="star" key={star}>
-                              <i className="fa fa-star" aria-hidden="true"></i>
-                              <span className="sr-only">{star} star</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <label htmlFor="review" className="sr-only">
-                          Write your review
-                        </label>
-                        <textarea
-                          name="review"
-                          id="review"
-                          className="form-control mt-3"
-                          aria-label="Write your review"
-                        ></textarea>
-
-                        <button
-                          className="btn my-3 float-right review-btn px-4 text-white"
-                          data-dismiss="modal"
-                          aria-label="Submit review and close modal"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </section>
           </main>
         </>
