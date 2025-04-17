@@ -257,7 +257,7 @@ export default function NewProduct() {
                 type="submit"
                 disabled={loading}
                 className="btn btn-block py-3"
-                tabindex="18"
+                tabIndex={0}
               >
                 {loading ? "Creating..." : "CREATE"}
               </button>

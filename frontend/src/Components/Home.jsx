@@ -52,7 +52,7 @@ const Home = () => {
                   <Product key={product._id} product={product} />
                 ))
               ) : (
-                <div>No products available at the moment.</div> // Enhanced message
+                <div>No products available at the moment.</div>
               )}
             </div>
           </section>
